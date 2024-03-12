@@ -442,22 +442,19 @@ localStorage.setItem("cart",JSON.stringify(storage))
 table[0].appendChild(trcreate)
 })
 }
-
-
-
- // Add event listener for "Add to cart" button
+ 
  document.addEventListener("click", function(event) {
         if (event.target.matches("button")) {
             if (event.target.innerText === "Add to cart") {
-                // Show notification
                 document.getElementById("notification").style.display = "block";
-                // Hide notification after 2 seconds
                 setTimeout(function(){
                     document.getElementById("notification").style.display = "none";
                 }, 2000);
             }
         }
     });
+
+
 
  </script>
 </body>
