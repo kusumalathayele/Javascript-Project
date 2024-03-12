@@ -6,20 +6,19 @@
     <title>Document</title>
 <style>
     body{
-    background-image: url("https://c1.wallpaperflare.com/preview/847/400/888/shopping-cart-shopping-purchasing-candy.jpg");
-    background-repeat: no-repeat;
+    background-color: aqua;
     background-size: cover;
-    color: white;
+    color:black;
     }
 button{
     
-    background-color: aqua
+    background-color:blue
 }
     img{
         width: 100px;
     }
     div{
-        background-color: deeppink;
+        background-color:cornflowerblue;
         max-width: 100%;
     }
 </style>
@@ -27,7 +26,7 @@ button{
 <body>
     
     <button id="a1">Back</button>
-    <button id="a2">Clear</button>
+    <!-- <button id="a2">Clear</button> -->
 
     <div></div>
 </body>
@@ -37,11 +36,11 @@ button{
      window.history.back()
     })
 
-   let btn2=document.getElementById("a2")
-   btn2.addEventListener("click",()=>{
-   localStorage.removeItem("cart");
-   document.querySelector("div").innerHTML = "";
-   })
+//    let btn2=document.getElementById("a2")
+//    btn2.addEventListener("click",()=>{
+//    localStorage.removeItem("cart");
+//    document.querySelector("div").innerHTML = "";
+//    })
 
     let value=JSON.parse(localStorage.getItem("cart"))
  

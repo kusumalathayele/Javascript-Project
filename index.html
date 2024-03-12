@@ -9,9 +9,8 @@
       border: 2px solid black;
     }
      body{
-    background-image: url("https://t4.ftcdn.net/jpg/04/97/75/31/360_F_497753136_bH8EvqHQXLeQgQfcaTnaeL2JR2EnkXqz.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
+ 
+    background-color: aqua;
     color: rgb(22, 21, 21);
     font-display: bold;
      }
@@ -25,6 +24,19 @@
     text-align: center;
     background-color: chartreuse;
    }
+   
+   .notification {
+            display: none;
+            background-color: #f2f2f2;
+            padding: 20px;
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            border: 2px solid green;
+            border-radius: 5px;
+            z-index: 1;
+        }
     </style>
 </head>
 <body>
@@ -32,7 +44,7 @@
     <marquee scroll amount="10" direction="right" background-color="pink"> FASHION MELA </marquee>
   </nav>
   <div>
-        <button id="a1">All </button>
+      
         <button id="a2">mens</button>
         <button id="a3"> womens</button>
         <button id="a4">electronics</button>
@@ -40,6 +52,8 @@
         <button id="a6">cart</button>
               </div>
         <table></table>
+
+        <div id="notification" class="notification">Product added to cart!</div>
 
     <script>
 
@@ -287,12 +301,9 @@ let table=document.getElementsByTagName("table")
     }
   ]
   
-  let btn1=document.getElementById("a1")
-  btn1.style.backgroundColor="pink"
-  btn1.addEventListener("click",()=>{
-    add()
+ 
     display(arr)
-  })
+
   let btn2=document.getElementById("a2")
   btn2.style.backgroundColor="pink"
   btn2.addEventListener("click",()=>{
@@ -434,6 +445,19 @@ table[0].appendChild(trcreate)
 
 
 
+ // Add event listener for "Add to cart" button
+ document.addEventListener("click", function(event) {
+        if (event.target.matches("button")) {
+            if (event.target.innerText === "Add to cart") {
+                // Show notification
+                document.getElementById("notification").style.display = "block";
+                // Hide notification after 2 seconds
+                setTimeout(function(){
+                    document.getElementById("notification").style.display = "none";
+                }, 2000);
+            }
+        }
+    });
 
  </script>
 </body>
